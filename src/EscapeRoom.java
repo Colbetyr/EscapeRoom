@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class EscapeRoom {
 
     JPanel panel;
-    JLabel creepyNarrator;
+    JLabel Narrator;
     JRadioButton choiceOne, choiceTwo, choiceThree;
     JButton endButton;
 
@@ -27,7 +27,7 @@ public class EscapeRoom {
 
         panel = new JPanel();
 
-        creepyNarrator = new JLabel("<html>You are in a dark room. You hear a creepy laugh. You see a dimly lit candle, a phone, and what seems to be a portal (but it could be a trap). What do you do?");
+        Narrator = new JLabel("<html>You are in a dark room. You hear a creepy laugh. You see a dimly lit candle, a phone, and what seems to be a portal (but it could be a trap). What do you do?");
         choiceOne = new JRadioButton("Grab the candle.");
         choiceTwo = new JRadioButton("Grab the phone.");
         choiceThree = new JRadioButton("Approach the portal.");
@@ -36,7 +36,7 @@ public class EscapeRoom {
 
         ButtonGroup radios = new ButtonGroup();
 
-        creepyNarrator.setBounds(20, 20, 250, 200);
+        Narrator.setBounds(20, 20, 250, 200);
 
         choiceOne.setBounds(20, 250, 150, 50);
         choiceTwo.setBounds(20, 300, 150, 50);
@@ -62,7 +62,7 @@ public class EscapeRoom {
         panel.add(choiceTwo);
         panel.add(choiceThree);
         panel.add(action);
-        panel.add(creepyNarrator);
+        panel.add(Narrator);
 
         frame.add(panel);
 
@@ -90,7 +90,7 @@ public class EscapeRoom {
     private class endButtonListener implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
-            creepyNarrator.setText("<html>The portal was in fact a way to get home but you wake up and find out it was a dream! or was it?");
+            Narrator.setText("<html>The portal was in fact a way to get home but you wake up and find out it was a dream! or was it?");
             panel.remove(endButton);
 
             panel.updateUI();
@@ -103,7 +103,7 @@ public class EscapeRoom {
 
     public void choiceA() {
 
-        creepyNarrator.setText("<html>When you grab the candle, it melts completely. The clown that was in the same room killed you. YOU LOSE!!!");
+        Narrator.setText("<html>When you grab the candle, it melts completely. The clown that was in the same room killed you. YOU LOSE!!!");
         panel.remove(choiceOne);
         panel.remove(choiceTwo);
         panel.remove(choiceThree);
@@ -115,7 +115,7 @@ public class EscapeRoom {
 
     public void choiceB() {
 
-        creepyNarrator.setText("<html>When you try to turn on the flashlight you realize it has no batteries. The clown in the same room puts you in an eternal slumber. YOU LOSE!!!");
+        Narrator.setText("<html>When you try to turn on the flashlight you realize it has no batteries. The clown in the same room puts you in an eternal slumber. YOU LOSE!!!");
         panel.remove(choiceOne);
         panel.remove(choiceTwo);
         panel.remove(choiceThree);
@@ -127,7 +127,7 @@ public class EscapeRoom {
 
     public void choiceC() {
 
-        creepyNarrator.setText("<html>Congrats!!! You have escaped. The portal was unlocked You have escaped and won!");
+        Narrator.setText("<html>Congrats!!! You have escaped. The portal was unlocked You have escaped and won!");
         panel.remove(choiceOne);
         panel.remove(choiceTwo);
         panel.remove(choiceThree);
